@@ -3,7 +3,7 @@ package v1alpha1
 import (
 	policieskyvernoio "github.com/kyverno/api/api/policies.kyverno.io"
 	admissionregistrationv1 "k8s.io/api/admissionregistration/v1"
-	admissionregistrationv1alpha1 "k8s.io/api/admissionregistration/v1alpha1"
+	admissionregistrationv1beta1 "k8s.io/api/admissionregistration/v1beta1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -113,7 +113,7 @@ type MutatingPolicySpec struct {
 	//
 	// +listType=atomic
 	// +optional
-	Mutations []admissionregistrationv1alpha1.Mutation `json:"mutations,omitempty" protobuf:"bytes,4,rep,name=mutations"`
+	Mutations []admissionregistrationv1beta1.Mutation `json:"mutations,omitempty" protobuf:"bytes,4,rep,name=mutations"`
 
 	// WebhookConfiguration defines the configuration for the webhook.
 	// +optional

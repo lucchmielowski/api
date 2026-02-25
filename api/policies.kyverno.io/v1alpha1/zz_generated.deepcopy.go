@@ -23,7 +23,7 @@ package v1alpha1
 
 import (
 	admissionregistrationv1 "k8s.io/api/admissionregistration/v1"
-	admissionregistrationv1alpha1 "k8s.io/api/admissionregistration/v1alpha1"
+	v1beta1 "k8s.io/api/admissionregistration/v1beta1"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
@@ -1202,7 +1202,7 @@ func (in *MutatingPolicySpec) DeepCopyInto(out *MutatingPolicySpec) {
 	}
 	if in.Mutations != nil {
 		in, out := &in.Mutations, &out.Mutations
-		*out = make([]admissionregistrationv1alpha1.Mutation, len(*in))
+		*out = make([]v1beta1.Mutation, len(*in))
 		for i := range *in {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
